@@ -1,14 +1,34 @@
-image: alpine:latest
+image: docker:latest
+
+# When using dind, it's wise to use the overlayfs driver for
+# improved performance.
+variables:
+  DOCKER_DRIVER: overlay2
+
+services:
+  - docker:dind
+
+before_script:
+  - docker info
 
 stages:
   - build
+  - deploy
 
-pages:
+build:
   stage: build
   script:
-  - echo 'deploy pages…'
+    - docker run -v "$(pwd)/gutenberg:/gutenberg" -w /gutenberg puckbag/gutenberg:v0.3.3 build
   artifacts:
     paths:
-    - public
+      - gutenberg/public
+
+pages:
+  stage: deploy
+  script:
+    - mv gutenberg/public public
+  artifacts:
+    paths:
+      - public
   only:
-  - master
+    - master
