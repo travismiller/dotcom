@@ -8,12 +8,15 @@ compile_sass = true
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Gutenberg
 highlight_code = true
 
+# Which theme to use for the code highlighting.
+highlight_theme = "charcoal"
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 # Whether to generate a tags page and individual
 # tag pages for pages with tags
-generate_tags_pages = false
+generate_tags_pages = true
 
 # Whether to generate a categories page and individual
 # category pages for pages with a category

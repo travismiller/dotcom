@@ -1,58 +1,158 @@
-* {
-    margin: 0;
+html,body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Oswald', sans-serif;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl {
+  margin: 1rem 0;
+}
+
+code {
+  background-color: #F5F8FA;
+  padding: 0 0.2em;
+  margin: 0 0.1em;
+  border: 1px solid #DDDDDD;
+  border-radius: 0.2em;
+}
+
+pre {
+  padding: 0.5em;
+}
+
+body[data-path=""] {
+  max-width: none;
+  #main {
     padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.home {
+  display: table;
+  width: 100%;
+  height: 100%;
+  > div {
+    display: table-cell;
     font-family: 'Oswald', sans-serif;
     font-size: 36px;
-}
-html,body {
-    width: 100%;
-    height: 100%;
     text-align: center;
-    background-color: #F5F8FA;
+    vertical-align: middle;
+    > * {
+      margin: 1em 0;
+    }
+  }
 }
 
-body {
-  > div {
-    display: table;
-    width: 100%;
-    height: 100%;
-    > div {
-      display: table-cell;
-      vertical-align: middle;
+.email {
+  > a {
+    display: inline-block;
+    text-decoration: none;
+    color: #444444;
+    padding: 0.2em 0.8em 0.3em 0.8em;
+    border-radius: 0.5em;
 
-      > .email {
-        > a {
-          display: inline-block;
-          text-decoration: none;
-          color: #444444;
-          padding: 0.2em 0.8em 0.3em 0.8em;
-          border-radius: 0.5em;
-
-          &:hover {
-            background-color: #444444;
-            color: #ffffff;
-          }
-        }
-      }
-
-      > .social {
-        margin-top: 1em;
-
-        > a {
-          color: #ccc;
-          font-size: 0.8em;
-
-          &:hover {
-            color: #444;
-
-            .fa-docker   { color: #0db7ed; } // https://www.docker.com/brand-guidelines
-            .fa-github   { color: #000000; } // https://github.com/logos
-            .fa-gitlab   { color: #fc6d26; } // https://about.gitlab.com/handbook/marketing/
-            .fa-linkedin { color: #0077b5; } // https://brand.linkedin.com/
-            .fa-twitter  { color: #1da1f2; } // https://about.twitter.com/en_us/company/brand-resources.html
-          }
-        }
-      }
+    &:hover {
+      background-color: #444444;
+      color: #FFFFFF;
     }
+  }
+}
+
+.social {
+  > a {
+    color: #CCCCCC;
+    font-size: 0.8em;
+
+    &:hover {
+      color: #444444;
+
+      .fa-docker   { color: #0DB7ED; } // https://www.docker.com/brand-guidelines
+      .fa-github   { color: #000000; } // https://github.com/logos
+      .fa-gitlab   { color: #FC6D26; } // https://about.gitlab.com/handbook/marketing/
+      .fa-linkedin { color: #0077B5; } // https://brand.linkedin.com/
+      .fa-twitter  { color: #1DA1F2; } // https://about.twitter.com/en_us/company/brand-resources.html
+    }
+  }
+}
+
+.unsplash {
+  position: relative;
+
+  &:hover > a.unsplash-credit {
+    display: inline-block;
+  }
+
+  > a.unsplash-credit {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 4px 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2;
+    border-radius: 3px;
+  }
+}
+
+article.post {
+  header {
+    // position: relative;
+
+    .cover {
+      height: 40vh;
+      min-height: 200px;
+      margin: -2rem; margin-bottom: auto;
+    }
+
+    .title {
+      // height: 40vh;
+      // // line-height: 40vh;
+      // min-height: 200px;
+      // margin: -2rem; margin-bottom: auto;
+      // padding: 2rem 2rem 2rem 2rem;
+      // text-shadow: 0 0 0.3em black;
+      // text-align: right;
+    }
+
+    .unsplash {
+      // margin: -2rem; margin-bottom: auto;
+    }
+
+    // .title {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   margin: 0;
+    //   background: linear-gradient(to left, black, transparent);
+    //   color: #FFFFFF;
+    //   padding-left: 2rem;
+    //   padding-right: 2rem;
+    //   text-align: right;
+    //   line-height: 2;
+    // }
+    //
+    // .meta {
+    //   position: absolute;
+    // }
   }
 }

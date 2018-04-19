@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <h1>{{ tag.name }}</h2>
+
+  {% for page in tag.pages %}
+    {{ macros::page_in_list(page=page) }}
+  {% endfor %}
+{% endblock content %}

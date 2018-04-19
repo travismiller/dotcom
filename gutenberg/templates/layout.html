@@ -1,0 +1,31 @@
+{% import "macros.html" as macros %}
+<!doctype html>
+<html class="h-full bg-black">
+<head>
+<meta charset="utf-8">
+<title>Travis Miller - travis@travismiller.com</title>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/fontawesome.js" integrity="sha384-M2FSA4xMm1G9m4CNXM49UcDHeWcDZNucAlz1WVHxohug0Uw1K+IpUhp/Wjg0y6qG" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&amp;subset=latin-ext" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/preflight.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/utilities.min.css" rel="stylesheet">
+
+</head>
+<body class="flex flex-col h-full bg-white mx-auto max-w-xl text-black" data-path="{{ current_path }}">
+  {% block header %}
+    {% include "header.html" %}
+  {% endblock header %}
+
+  <div id="main" class="flex-1 container p-8 bg-white">
+    {% block main %}
+    {% endblock main %}
+  </div>
+
+  {% block footer %}
+    {% include "footer.html" %}
+  {% endblock footer %}
+</body>
+</html>

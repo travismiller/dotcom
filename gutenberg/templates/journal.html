@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="journal">
+    <header>
+      <h1 class="title">
+        {{ section.title }}
+      </h1>
+    </header>
+
+    {% for page in section.pages %}
+      {{ macros::page_card(page=page) }}
+    {% endfor %}
+  </div>
+{% endblock main %}
