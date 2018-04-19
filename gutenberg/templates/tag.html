@@ -4,6 +4,6 @@
   <h1>{{ tag.name }}</h2>
 
   {% for page in tag.pages %}
-    {{ macros::page_in_list(page=page) }}
+    {{ macros::page_card(page=page) }}
   {% endfor %}
 {% endblock content %}

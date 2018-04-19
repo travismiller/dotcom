@@ -1,8 +1,14 @@
 <footer class="w-full pin-b border-t border-grey-light p-4 flex bg-white">
   <div class="legal flex-1 text-left">
-    © 2018
+    Copyright ©
+    {% if page.date %}{{ page.date | date(format="%Y") }}{% else %}2018{% endif %}
+    <a href="mailto:travis@travismiller.com" class="text-black">Travis Miller</a>
   </div>
-  <div class="email flex-1 text-right">
-    <a href="mailto:travis@travismiller.com">travis@travismiller.com</a>
+  <div class="social flex-1 text-right">
+    <a href="https://github.com/travismiller"><i class="fab fa-github"></i></a>
+    <a href="https://gitlab.com/travismiller"><i class="fab fa-gitlab"></i></a>
+    <a href="https://hub.docker.com/u/puckbag/"><i class="fab fa-docker"></i></a>
+    <a href="https://twitter.com/puckbag/"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/puckbag"><i class="fab fa-linkedin"></i></a>
   </div>
 </footer>

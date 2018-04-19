@@ -3,9 +3,8 @@
 {% block main %}
 <article class="post">
   <header>
-    <div class="cover bg-center bg-no-repeat bg-cover bg-{{ page.extra.cover.position }}"
-         style="background-image: url('{{ page.extra.cover.src }}');">
-    </div>
+    {{ macros::page_cover(page=page) }}
+
     <h1 class="title">
       {{ page.title }}
     </h1>
@@ -17,17 +16,19 @@
     {{ page.content | safe }}
   </div>
 
-  <div class="flex mt-8 border-t">
-    {% if page.previous %}
-      <div class="flex-1 mx-2">
-        {{ macros::page_card_vertical(page=page.previous) }}
-      </div>
-    {% endif %}
-    {% if page.next %}
-      <div class="flex-1 mx-2">
-        {{ macros::page_card_vertical(page=page.next) }}
-      </div>
-    {% endif %}
-  </div>
+  {% if page.previous or page.next %}
+    <div class="flex mt-8 border-t">
+      {% if page.previous %}
+        <div class="flex-1 mx-2">
+          {{ macros::page_card_vertical(page=page.previous) }}
+        </div>
+      {% endif %}
+      {% if page.next %}
+        <div class="flex-1 mx-2">
+          {{ macros::page_card_vertical(page=page.next) }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 </article>
 {% endblock main %}

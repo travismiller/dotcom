@@ -1,6 +1,7 @@
 +++
 title = "Git Config"
 date = 2018-04-18
+tags = ["git", "env", "broco", "gitlab", "freelance"]
 
 [extra.cover]
 src = "/img/git-config.png"

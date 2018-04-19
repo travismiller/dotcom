@@ -6,6 +6,10 @@ tags = ["macos", "broco", "logbook"]
 [extra.cover]
 src = "/img/pexels/pexels-photo-331684.jpeg"
 position = "left"
+
+[extra.cover.attribution]
+name = "Math"
+link = "https://www.pexels.com/photo/close-up-of-laptop-keyboard-331684/"
 +++
 
 Recently, I acquired a new laptop for [work](https://www.broco.com/) and took

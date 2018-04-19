@@ -3,7 +3,11 @@
 <html class="h-full bg-black">
 <head>
 <meta charset="utf-8">
+{% if page.title %}
+<title>{{ page.title }} | Travis Miller</title>
+{% else %}
 <title>Travis Miller - travis@travismiller.com</title>
+{% endif %}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4189005-6"></script>
@@ -24,7 +28,7 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/utilities.min.css" rel="stylesheet">
 
 </head>
-<body class="flex flex-col h-full bg-white mx-auto max-w-xl text-black" data-path="{{ current_path }}">
+<body class="flex flex-col h-full bg-white mx-auto max-w-xl text-black leading-normal" data-path="{{ current_path }}">
   {% block header %}
     {% include "header.html" %}
   {% endblock header %}
