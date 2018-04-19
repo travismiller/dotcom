@@ -12,3 +12,11 @@ count of the number of times I've been here. Plone, Drupal, Laravel, and more,
 have all had their turn.
 
 <!-- more -->
+
+## The Tech
+
+- [Gutenberg](https://getgutenberg.io) - Rust based static site generator
+- [Tailwind CSS](https://tailwindcss.com/) - A Utility-First CSS Framework for Rapid UI Development
+- [Netlify](https://www.netlify.com/) -  Build, deploy, and manage modern web projects
+
+<!-- more -->
