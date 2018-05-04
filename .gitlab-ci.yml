@@ -23,12 +23,12 @@ build:
     paths:
       - gutenberg/public
 
-pages:
-  stage: deploy
-  script:
-    - mv gutenberg/public public
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
+# pages:
+#   stage: deploy
+#   script:
+#     - mv gutenberg/public public
+#   artifacts:
+#     paths:
+#       - public
+#   only:
+#     - master
