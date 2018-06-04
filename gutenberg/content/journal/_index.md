@@ -1,5 +1,5 @@
 +++
 title = "Journal"
-template = "journal.html"
+template = "journals.html"
 sort_by = "date"
 +++
