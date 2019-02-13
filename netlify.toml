@@ -14,3 +14,13 @@ GUTENBERG_VERSION = "0.3.3"
 # otherwise links would not work properly
 [context.deploy-preview]
 command = "gutenberg build --base-url $DEPLOY_PRIME_URL"
+
+# https://gitlab.com/gitlab-org/gitlab-ce/merge_requests?scope=all&utf8=%E2%9C%93&state=merged&author_username=travismiller
+[[redirects]]
+  from = "/gitlab-merged"
+  to = "https://bit.ly/travismiller-gitlab-merged"
+
+# http://contributors.gitlab.com/contributors/travis-miller/commits
+[[redirects]]
+  from = "/gitlab-contributor"
+  to = "https://bit.ly/travismiller-gitlab-contributor"
