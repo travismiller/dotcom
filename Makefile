@@ -6,12 +6,12 @@ help:
 
 .PHONY: redirects
 redirects:
-	echo "$$PRIVATE_REDIRECTS" >> gutenberg/static/_redirects
+	echo "$$PRIVATE_REDIRECTS" >> zola/static/_redirects
 
 .PHONY: build
 build: redirects
-	cd gutenberg && gutenberg build
+	cd zola && zola build
 
 .PHONY: build-preview
 build-preview: redirects
-	cd gutenberg && gutenberg build --base-url "$$DEPLOY_PRIME_URL"
+	cd zola && zola build --base-url "$$DEPLOY_PRIME_URL"
