@@ -6,6 +6,7 @@ help:
 
 .PHONY: redirects
 redirects:
+	cp zola/static/__redirects zola/static/_redirects
 	echo "$$PRIVATE_REDIRECTS" >> zola/static/_redirects
 
 .PHONY: build
