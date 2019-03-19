@@ -1,4 +1,4 @@
-SHELL = /bin/sh
+SHELL = /bin/bash
 
 .PHONY: help
 help:
@@ -6,12 +6,18 @@ help:
 
 .PHONY: redirects
 redirects:
-	echo "$$PRIVATE_REDIRECTS" >> gutenberg/static/_redirects
+	cp zola/static/__redirects zola/static/_redirects
+	echo "$$PRIVATE_REDIRECTS" >> zola/static/_redirects
+
+.PHONY: zola-bin
+zola-bin:
+	scripts/symlink-zola.sh
+	scripts/download-zola.sh
 
 .PHONY: build
-build: redirects
-	cd gutenberg && gutenberg build
+build: zola-bin redirects
+	cd zola && ../.bin/zola build
 
 .PHONY: build-preview
-build-preview: redirects
-	cd gutenberg && gutenberg build --base-url "$$DEPLOY_PRIME_URL"
+build-preview: zola-bin redirects
+	cd zola && ../.bin/zola build --base-url "$$DEPLOY_PRIME_URL"
