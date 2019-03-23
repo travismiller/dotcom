@@ -14,6 +14,10 @@ zola-bin:
 	scripts/symlink-zola.sh
 	scripts/download-zola.sh
 
+.PHONY: serve
+serve: zola-bin
+	cd zola && ../.bin/zola serve
+
 .PHONY: build
 build: zola-bin redirects
 	cd zola && ../.bin/zola build
