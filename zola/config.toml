@@ -1,6 +1,10 @@
 # The URL the site will be built for
 base_url = "https://travismiller.com"
 
+title = "Travis Miller"
+description = "Personal website for Travis Miller."
+default_language = "en"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -24,3 +28,4 @@ generate_categories_pages = false
 
 [extra]
 # Put all your custom variables here
+gtag_id = "4189005-6"
