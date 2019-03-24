@@ -1,27 +1,18 @@
 SHELL = /bin/bash
 
-.PHONY: help
-help:
-	@echo 'Help...'
+.PHONY: all build build-preview dev zola-bin
 
-.PHONY: redirects
-redirects:
-	cp zola/static/__redirects zola/static/_redirects
-	echo "$$PRIVATE_REDIRECTS" >> zola/static/_redirects
+all:
 
-.PHONY: zola-bin
+build: zola-bin
+	cd zola && ZOLA_BIN=../.bin/zola make build
+
+build-preview: zola-bin
+	cd zola && ZOLA_BIN=../.bin/zola make build-preview
+
+dev: zola-bin
+	cd zola && ZOLA_BIN=../.bin/zola make dev
+
 zola-bin:
 	scripts/symlink-zola.sh
 	scripts/download-zola.sh
-
-.PHONY: serve
-serve: zola-bin
-	cd zola && ../.bin/zola serve
-
-.PHONY: build
-build: zola-bin redirects
-	cd zola && ../.bin/zola build
-
-.PHONY: build-preview
-build-preview: zola-bin redirects
-	cd zola && ../.bin/zola build --base-url "$$DEPLOY_PRIME_URL"

@@ -6,6 +6,7 @@ command = "make build"
 
 [build.environment]
 # Set the version name that you want to use and Netlify will automatically use it
+NODE_VERSION = "10.15.3"
 ZOLA_VERSION = "0.5.1"
 
 # The magic for deploying previews of branches

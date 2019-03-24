@@ -1,34 +1,23 @@
-{% import "macros.html" as macros %}
+{%- import "macros.html" as macros -%}
 <!doctype html>
 <html class="h-full bg-black">
 <head>
-<meta charset="utf-8">
-{% if page.title %}
-<title>{{ page.title }} | Travis Miller</title>
-{% else %}
-<title>Travis Miller - travis@travismiller.com</title>
-{% endif %}
+  <meta charset="utf-8">
+{%- if page.title %}
+  <title>{{ page.title }} | {{ config.title }}</title>
+{%- elif section.title %}
+  <title>{{ section.title }} | {{ config.title }}</title>
+{%- else %}
+  <title>Travis Miller - travis@travismiller.com</title>
+{%- endif %}
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4189005-6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4189005-6');
-</script>
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/fontawesome.js" integrity="sha384-M2FSA4xMm1G9m4CNXM49UcDHeWcDZNucAlz1WVHxohug0Uw1K+IpUhp/Wjg0y6qG" crossorigin="anonymous"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&amp;subset=latin-ext" rel="stylesheet" type="text/css">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/preflight.min.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet" type="text/css">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/utilities.min.css" rel="stylesheet">
-
+{% include "partials/gtag.html" %}
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&amp;subset=latin-ext" rel="stylesheet" type="text/css">
+  <link href="/css/app.css" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <script defer src="/js/app.js"></script>
 </head>
-<body class="flex flex-col h-full bg-white mx-auto max-w-xl text-black leading-normal" data-path="{{ current_path }}">
+<body class="{% if not current_path %}index {% endif %}; flex flex-col h-full bg-white mx-auto max-w-xl text-black leading-normal" data-path="{{ current_path }}">
   {% block header %}
     {% include "header.html" %}
   {% endblock header %}

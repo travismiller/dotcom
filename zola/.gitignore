@@ -1,2 +1,6 @@
+/node_modules
 /public
 /static/_redirects
+/static/css/app.css
+/static/js/app.js
+/static/webfonts
