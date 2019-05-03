@@ -4,3 +4,25 @@
 @tailwind preflight;
 /* @tailwind components; */
 @tailwind utilities;
+
+.works {
+  @apply flex flex-wrap my-16;
+}
+
+.works .work {
+  @apply block w-1/2 p-2 text-center text-sm;
+}
+
+.works .work figure {
+  @apply rounded overflow-hidden shadow;
+}
+
+.works .work figure img {
+  @apply block w-full;
+}
+
+.works .work figure figcaption {
+  @apply overflow-hidden p-2;
+
+  text-overflow: ellipsis;
+}
