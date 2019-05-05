@@ -60,6 +60,16 @@ body.index {
     > * {
       margin: 1em 0;
     }
+
+    .links {
+      @apply flex justify-center;
+
+      font-size: 24px;
+
+      .link {
+        @apply block p-4;
+      }
+    }
   }
 }
 
