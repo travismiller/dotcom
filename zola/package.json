@@ -16,8 +16,11 @@
   },
   "homepage": "https://gitlab.com/travismiller/dotcom#readme",
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "@fortawesome/fontawesome-free": "^5.8.1",
     "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
     "babel-minify-webpack-plugin": "^0.3.1",
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^5.2.0",
