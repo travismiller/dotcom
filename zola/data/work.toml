@@ -1,0 +1,83 @@
+[["Open Source"]]
+title = "GitLab"
+url = "https://gitlab.com/gitlab-org/gitlab-ce/merge_requests?scope=all&utf8=%E2%9C%93&state=merged&author_username=travismiller"
+image = "/img/work/gitlab-mvp.jpg"
+domain = "GitLab Merge Requests"
+description = "Several contributions to GitLab. [Once recognized as MVP.](https://about.gitlab.com/2017/11/22/gitlab-10-2-released/#mvp)"
+
+[["Open Source"]]
+title = "GraphQL Rust - CLI Client"
+url = "https://github.com/graphql-rust/graphql-client/pull/237"
+image = "/img/work/graphql-rust.png"
+domain = "GraphQL Client PR#237"
+description = "Add header option to CLI."
+
+[["Open Source"]]
+title = "Sofa - CouchDB for Rust"
+url = "https://github.com/YellowInnovation/sofa/pull/4"
+image = "/img/work/sofa-logo.png"
+domain = "Sofa PR#4"
+description = "Clean all potentially panicking unwraps."
+
+[["Brothers & Company"]]
+title = "Mossy Oak"
+url="https://www.mossyoak.com/"
+image="/img/work/mossy-oak.jpg"
+domain="mossyoak.com"
+description="A Drupal 8 website."
+
+[["Brothers & Company"]]
+title = "Remington"
+url="https://www.remington.com/"
+image="/img/work/remington.jpg"
+domain="remington.com"
+description="A Drupal 7 website."
+
+[["Brothers & Company"]]
+title = "Helmerich & Payne"
+url="https://www.hpinc.com/"
+image="/img/work/hpinc.jpg"
+domain="hpinc.com"
+description="A Drupal 8 website."
+
+[["Brothers & Company"]]
+title = "Toyota Trucks Bonus Bucks"
+url="https://www.toyotatrucksbonusbucks.com/"
+image="/img/work/ttbb.jpg"
+domain="toyotatrucksbonusbucks.com"
+description="Custom contingency website built with Laravel."
+
+[["Brothers & Company"]]
+title = "Stillwater Medical"
+url="https://www.stillwater-medical.org"
+image="/img/work/stillwater-medical.jpg"
+domain="stillwater-medical"
+description="A Drupal 8 website."
+
+[["Brothers & Company"]]
+title = "Adaptive Sports"
+url="https://www.adaptivesports.org/"
+image="/img/work/adaptive.jpg"
+domain="adaptivesports.org"
+description="A Drupal 8 website."
+
+[["Brothers & Company"]]
+title = "The Chung Report"
+url="https://thechungreport.com/"
+image="/img/work/thechungreport.jpg"
+domain="thechungreport.com"
+description="Ghost CMS."
+
+[["Brothers & Company"]]
+title = "Brothers &amp; Company"
+url="https://www.broco.com/"
+image="/img/work/broco-yakima.jpg"
+domain="broco.com"
+description="Custom agency website built with Laravel."
+
+[["Freelance"]]
+title = "Performance Product Technologies"
+url="https://www.perfprotech.com/"
+image="/img/work/perfprotech.jpg"
+domain="perfprotech.com"
+description="Custom e-commerce platform built with Kohana. Over 400,000 SKUs for sale."

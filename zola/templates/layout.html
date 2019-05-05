@@ -13,9 +13,8 @@
 
 {% include "partials/gtag.html" %}
   <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&amp;subset=latin-ext" rel="stylesheet" type="text/css">
-  <link href="/css/app.css" rel="stylesheet" type="text/css">
-  <link href="/css/style.css" rel="stylesheet" type="text/css">
-  <script defer src="/js/app.js"></script>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  <script defer src="/js/main.js"></script>
 </head>
 <body class="{% if not current_path %}index {% endif %}; flex flex-col h-full bg-white mx-auto max-w-xl text-black leading-normal" data-path="{{ current_path }}">
   {% block header %}

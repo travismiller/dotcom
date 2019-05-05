@@ -5,9 +5,9 @@ const BabelMinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: [
-      './src/css/app.css',
-      './src/js/app.js',
+    main: [
+      './src/css/main.scss',
+      './src/js/main.js',
     ]
   },
   optimization: {
@@ -24,12 +24,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             { loader: 'css-loader', options: { importLoaders: 1 } },
             'postcss-loader',
+            'sass-loader',
           ],
         }),
       },
@@ -40,7 +41,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new BabelMinifyPlugin(minifyOpts={}, pluginOpts={}),
+    new BabelMinifyPlugin(minifyOpts = {}, pluginOpts = {}),
     new ExtractTextPlugin('css/[name].css', {
       disable: process.env.NODE_ENV === 'development',
     }),
