@@ -1,0 +1,22 @@
+{% set data = load_data(path="data/work.toml") %}
+
+<div class="works">
+  <h2>{{ group }}</h2>
+
+  {% if body %}
+    {{ body | markdown }}
+  {% endif %}
+
+  {% if data[group] %}
+    {% for work in data[group] %}
+      <figure class="work">
+        <img src="{{ work.image }}">
+        <figcaption>
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.description | markdown }}</p>
+          <a href="{{ work.url }}" rel="noreferrer" target="_blank">{{ work.domain }}</a>
+        </figcaption>
+      </figure>
+    {% endfor %}
+  {% endif %}
+</div>

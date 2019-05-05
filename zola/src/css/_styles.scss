@@ -168,3 +168,37 @@ article.post {
     // }
   }
 }
+
+.works {
+  @apply flex flex-wrap my-4;
+
+  figure.work {
+    @apply block text-sm rounded overflow-hidden shadow-md flex flex-wrap w-full my-4;
+
+    img {
+      @apply block w-full;
+
+      @screen sm {
+        @apply w-1/2;
+      }
+    }
+
+    figcaption {
+      @apply w-full py-2 px-4 overflow-hidden;
+
+      text-overflow: ellipsis;
+
+      @screen sm {
+        @apply w-1/2;
+      }
+
+      & > *:first-child {
+        @apply mt-0;
+      }
+
+      & > a {
+        @apply block text-center p-2;
+      }
+    }
+  }
+}

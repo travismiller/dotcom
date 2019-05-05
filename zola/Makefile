@@ -34,8 +34,9 @@ webpack-dev: | node_modules
 
 # Real
 
-node_modules:
-	npm install
+node_modules: package.json package-lock.json
+	npm install --no-save
+	touch node_modules
 
 static/_redirects:
 	cp static/__redirects static/_redirects
