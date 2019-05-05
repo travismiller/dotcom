@@ -12,9 +12,13 @@
       <figure class="work">
         <img src="{{ work.image }}">
         <figcaption>
-          <h3>{{ work.title }}</h3>
-          <p>{{ work.description | markdown }}</p>
-          <a href="{{ work.url }}" rel="noreferrer" target="_blank">{{ work.domain }}</a>
+          <div class="info">
+            <h3>{{ work.title }}</h3>
+            <p>{{ work.description | markdown }}</p>
+          </div>
+          <p class="links">
+            <a href="{{ work.url }}" rel="noreferrer" target="_blank">{{ work.domain }}</a>
+          </p>
         </figcaption>
       </figure>
     {% endfor %}

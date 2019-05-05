@@ -183,7 +183,7 @@ article.post {
   @apply flex flex-wrap my-4;
 
   figure.work {
-    @apply block text-sm rounded overflow-hidden shadow-md flex flex-wrap w-full my-4;
+    @apply block text-sm rounded overflow-hidden shadow-md flex flex-wrap w-full my-4 border;
 
     img {
       @apply block w-full;
@@ -194,7 +194,7 @@ article.post {
     }
 
     figcaption {
-      @apply w-full py-2 px-4 overflow-hidden;
+      @apply w-full py-2 px-4 overflow-hidden flex flex-wrap content-between;
 
       text-overflow: ellipsis;
 
@@ -202,12 +202,20 @@ article.post {
         @apply w-1/2;
       }
 
-      & > *:first-child {
-        @apply mt-0;
+      & > .info {
+        @apply w-full;
+
+        & > *:first-child {
+          @apply mt-0;
+        }
       }
 
-      & > a {
-        @apply block text-center p-2;
+      & > .links {
+        @apply w-full;
+
+        & > a {
+          @apply block text-center p-2;
+        }
       }
     }
   }
