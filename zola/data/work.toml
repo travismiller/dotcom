@@ -20,6 +20,13 @@ domain = "Sofa PR#4"
 description = "Clean all potentially panicking unwraps."
 
 [["Brothers & Company"]]
+title = "Vudu Optics"
+url="https://www.vuduoptics.com/"
+image="/img/work/vuduoptics.jpg"
+domain="vuduoptics.com"
+description="A JAMstack website built with Hugo & TailwindCSS."
+
+[["Brothers & Company"]]
 title = "Mossy Oak"
 url="https://www.mossyoak.com/"
 image="/img/work/mossy-oak.jpg"
