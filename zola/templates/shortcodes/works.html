@@ -13,7 +13,7 @@
         <img src="{{ work.image }}">
         <figcaption>
           <div class="info">
-            <h3>{{ work.title }}</h3>
+            <h3>{{ work.title | safe }}</h3>
             <p>{{ work.description | markdown }}</p>
           </div>
           <p class="links">
