@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=${VERSION:-0.6.0}
+VERSION=${VERSION:-0.7.0}
 ARCH=${ARCH:-x86_64-unknown-linux-gnu}
 
 mkdir -p .bin
@@ -13,4 +13,4 @@ else
   echo 'zola already exists!'
 fi
 
-cd -
+cd - >/dev/null
