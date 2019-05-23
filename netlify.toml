@@ -1,12 +1,14 @@
 [build]
 # assuming the gutenberg site is in a docs folder, if it isn't you don't need
 # to have a `base` variable but you do need the `publish` and `command`
-publish = "zola/public"
+base = "zola/"
+publish = "zola/public/"
 command = "make build"
 
 [build.environment]
 # Set the version name that you want to use and Netlify will automatically use it
 NODE_VERSION = "10.15.3"
+YARN_VERSION = "1.16.0"
 ZOLA_VERSION = "0.6.0"
 
 # The magic for deploying previews of branches

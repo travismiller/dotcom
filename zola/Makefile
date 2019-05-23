@@ -1,22 +1,22 @@
 SHELL = /bin/bash
-ZOLA_BIN ?= zola
+ZOLA_BIN ?= .bin/zola
 
-.PHONY: all build build-preview clean dev _dev redirects serve webpack webpack-dev
+.PHONY: all build build-preview clean dev _dev redirects serve webpack webpack-dev zola-bin
 
 all:
 
-build: redirects webpack
+build: zola-bin redirects webpack
 	$(ZOLA_BIN) build
-	npx purgecss --config ./purgecss.config.js --out ./public/css
+	yarn run purgecss --config ./purgecss.config.js --out ./public/css
 
-build-preview: redirects webpack
+build-preview: zola-bin redirects webpack
 	$(ZOLA_BIN) build --base-url "$$DEPLOY_PRIME_URL"
-	npx purgecss --config ./purgecss.config.js --out ./public/css
+	yarn run purgecss --config ./purgecss.config.js --out ./public/css
 
 clean:
 	for line in $(shell cat .gitignore); do rm -Rf ".$$line"; done
 
-dev:
+dev: zola-bin
 	@$(MAKE) _dev -j2
 
 _dev: webpack-dev serve
@@ -27,17 +27,27 @@ serve:
 	$(ZOLA_BIN) serve
 
 webpack: | node_modules
-	npm run prod
+	yarn prod
 
 webpack-dev: | node_modules
-	npm run dev
+	yarn run dev
+
+zola-bin: .bin/zola
 
 # Real
 
-node_modules: package.json package-lock.json
-	npm install --no-save
+yarn.lock:
+	[ -f yarn.lock ] || touch yarn.lock
+
+node_modules: package.json yarn.lock
+	yarn install
 	touch node_modules
 
 static/_redirects:
 	cp static/__redirects static/_redirects
 	echo "$$PRIVATE_REDIRECTS" >> static/_redirects
+
+.bin/zola:
+	scripts/symlink-zola.sh
+	scripts/download-zola.sh
+	touch .bin/zola

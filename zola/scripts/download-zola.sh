@@ -9,6 +9,8 @@ cd .bin
 
 if [ ! -f zola ]; then
   curl -sL https://github.com/getzola/zola/releases/download/v${VERSION}/zola-v${VERSION}-${ARCH}.tar.gz | tar -xz
+else
+  echo 'zola already exists!'
 fi
 
 cd -
