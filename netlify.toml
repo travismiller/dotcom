@@ -9,7 +9,7 @@ command = "make build"
 # Set the version name that you want to use and Netlify will automatically use it
 NODE_VERSION = "10.15.3"
 YARN_VERSION = "1.16.0"
-ZOLA_VERSION = "0.6.0"
+ZOLA_VERSION = "0.7.0"
 
 # The magic for deploying previews of branches
 # We need to override the base url with what the url of the preview is ($DEPLOY_PRIME_URL)

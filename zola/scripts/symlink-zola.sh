@@ -12,4 +12,4 @@ else
   echo 'zola already exists!'
 fi
 
-cd -
+cd - >/dev/null
