@@ -8,7 +8,7 @@ description = "Several contributions to GitLab. [Once recognized as MVP.](https:
 [["Open Source"]]
 title = "Asyncronous Rust Mysql driver based on Tokio"
 url = "https://github.com/blackbeam/mysql_async/pull/61"
-image = "/img/work/crate_mysql_async.png"
+image = "/img/work/crates_mysql_async.png"
 domain = "mysql_async PR#61"
 description = "Leverage tokio::fs::File for LOAD DATA FILE"
 
