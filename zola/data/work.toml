@@ -6,6 +6,13 @@ domain = "GitLab Merge Requests"
 description = "Several contributions to GitLab. [Once recognized as MVP.](https://about.gitlab.com/2017/11/22/gitlab-10-2-released/#mvp)"
 
 [["Open Source"]]
+title = "Asyncronous Rust Mysql driver based on Tokio"
+url = "https://github.com/blackbeam/mysql_async/pull/61"
+image = "/img/work/crates_mysql_async.png"
+domain = "mysql_async PR#61"
+description = "Leverage tokio::fs::File for LOAD DATA FILE"
+
+[["Open Source"]]
 title = "GraphQL Rust - CLI Client"
 url = "https://github.com/graphql-rust/graphql-client/pull/237"
 image = "/img/work/graphql-rust.png"
