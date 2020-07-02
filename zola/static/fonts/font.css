@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		/* from https://fonts.gstatic.com/s/oswald/v34/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2 */
+		url('Oswald.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/oswald/v34/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYw.woff */
+		url('Oswald.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/oswald/v34/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYQ.eot */
+		url('Oswald.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYg&skey=653237e53512d0de&v=v34#Oswald */
+		url('Oswald.svg#Oswald') format('svg'),
+		/* from https://fonts.gstatic.com/s/oswald/v34/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYA.ttf */
+		url('Oswald.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('Raleway'),
+		local('Raleway-Regular'),
+		/* from https://fonts.gstatic.com/s/raleway/v16/1Ptug8zYS_SKggPNyC0ITw.woff2 */
+		url('Raleway.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/raleway/v16/1Ptug8zYS_SKggPNyC0ISQ.woff */
+		url('Raleway.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/raleway/v16/1Ptug8zYS_SKggPNyC0ISw.eot */
+		url('Raleway.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=1Ptug8zYS_SKggPNyC0ISA&skey=30a27f2564731c64&v=v16#Raleway */
+		url('Raleway.svg#Raleway') format('svg'),
+		/* from https://fonts.gstatic.com/s/raleway/v16/1Ptug8zYS_SKggPNyC0ISg.ttf */
+		url('Raleway.ttf') format('truetype');
+}
