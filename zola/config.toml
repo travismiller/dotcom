@@ -71,7 +71,9 @@ compile_sass = false
 ignored_content = []
 
 # A list of directories used to search for additional `.sublime-syntax` files.
-extra_syntaxes = []
+extra_syntaxes = [
+    "syntaxes/Sublime-console",
+]
 
 # Configuration of the link checker.
 [link_checker]
