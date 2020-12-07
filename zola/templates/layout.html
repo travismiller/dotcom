@@ -3,13 +3,17 @@
 <html class="h-full bg-black">
 <head>
   <meta charset="utf-8">
-{%- if page.title %}
-  <title>{{ page.title }} | {{ config.title }}</title>
-{%- elif section.title %}
-  <title>{{ section.title }} | {{ config.title }}</title>
-{%- else %}
-  <title>Travis Miller - travis@travismiller.com</title>
-{%- endif %}
+  {% block title %}
+    {%- if page.title %}
+      <title>{{ page.title }} | {{ config.title }}</title>
+    {%- elif section.title %}
+      <title>{{ section.title }} | {{ config.title }}</title>
+    {%- elif taxonomy.name %}
+      <title>{{ taxonomy.name | capitalize }} | {{ config.title }}</title>
+    {%- else %}
+      <title>Travis Miller - travis@travismiller.com</title>
+    {%- endif %}
+  {% endblock title %}
 
   <link href="/fonts/font.css?{{ now(timestamp=true) }}" rel="stylesheet" type="text/css">
   <link href="/css/main.css?{{ now(timestamp=true) }}" rel="stylesheet" type="text/css">
