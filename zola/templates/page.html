@@ -16,16 +16,18 @@
     {{ page.content | safe }}
   </div>
 
-  {% if page.previous or page.next %}
+  {% set page_previous = page.earlier | default(value=page.heavier) %}
+  {% set page_next = page.later | default(value=page.lighter) %}
+  {% if page_previous or page_next %}
     <div class="flex mt-8 border-t">
-      {% if page.previous %}
+      {% if page_previous %}
         <div class="flex-1 mx-2">
-          {{ macros::page_card_vertical(page=page.previous) }}
+          {{ macros::page_card_vertical(page=page_previous) }}
         </div>
       {% endif %}
-      {% if page.next %}
+      {% if page_next %}
         <div class="flex-1 mx-2">
-          {{ macros::page_card_vertical(page=page.next) }}
+          {{ macros::page_card_vertical(page=page_next) }}
         </div>
       {% endif %}
     </div>

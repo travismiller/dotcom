@@ -1,13 +1,21 @@
 {% macro page_meta(page) %}
-    <div class="meta text-grey">
+    <div class="meta">
       {% if page.date %}
         <div>{{ page.date | date(format="%F") }}</div>
       {% endif %}
 
-      {% if page.tags %}
+      {% for ancestor in page.ancestors %}
+        {% set section = get_section(path=ancestor, metadata_only=true) %}
+        {% if section %}
+          <a href="{{ section.permalink }}"> {{ section.title }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page.taxonomies.tags %}
         <div class="tags">
-          {% for tag in page.tags %}
-            <a href="{{ get_taxonomy_url(kind="tag", name=tag) }}" class="tag inline-block bg-grey-lightest rounded px-2 py-0 text-sm text-grey">{{ tag }}</a>
+          tags:
+          {% for tag in page.taxonomies.tags %}
+            <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="tag">{{ tag }}</a>
           {% endfor %}
         </div>
       {% endif %}
@@ -35,36 +43,38 @@
 {% endmacro page_in_list %}
 
 {% macro page_card(page) %}
+{% if page %}
 <div class="w-full md:flex my-8 rounded overflow-hidden border">
-  <div class="h-48 md:h-auto md:w-48 flex-none border-b md:border-b-0 md:border-r text-center overflow-hidden bg-cover bg-{{ page.extra.cover.position }}" style="background-image: url('{{ page.extra.cover.src }}')" title="">
+  <div class="h-48 md:h-auto md:w-48 flex-none border-b md:border-b-0 md:border-r text-center overflow-hidden bg-cover bg-{{ page.extra.cover.position | default(value="center") }}" style="background-image: url('{{ page.extra.cover.src | default(value="none") }}')" title="">
     <a href="{{ page.permalink }}" class="block h-full"></a>
   </div>
   <div class="flex-grow bg-white p-4 flex flex-col justify-between leading-normal">
       <h2 class="text-black mt-0 mb-2"><a href="{{ page.permalink }}" class="block -m-4 p-4 text-black">{{ page.title }}</a></h2>
-      {{ self::page_meta(page=page) }}
       <div>{{ page.summary | safe }}</div>
       <a href="{{ page.permalink }}" class="block text-right -m-4 p-4">continue &#8594;</a>
   </div>
 </div>
+{% endif %}
 {% endmacro page_card %}
 
 {% macro page_card_vertical(page) %}
+{% if page %}
 <div class="w-full my-8 rounded overflow-hidden border">
   <div class="h-48 border-b text-center overflow-hidden bg-cover bg-{{ page.extra.cover.position }}" style="background-image: url('{{ page.extra.cover.src }}')" title="">
     <a href="{{ page.permalink }}" class="block h-full"></a>
   </div>
   <div class="bg-white p-4 flex flex-col justify-between leading-normal">
       <h2 class="text-black mt-0 mb-2"><a href="{{ page.permalink }}" class="text-black">{{ page.title }}</a></h2>
-      {{ self::page_meta(page=page) }}
       <div>{{ page.summary | safe }}</div>
       <a href="{{ page.permalink }}" class="block text-right -m-4 p-4">continue &#8594;</a>
   </div>
 </div>
+{% endif %}
 {% endmacro page_card_vertical %}
 
 {% macro page_cover(page) %}
-{% if page.extra %}
-<div class="cover bg-center bg-no-repeat bg-cover bg-{{ page.extra.cover.position }}"
+{% if page.extra.cover %}
+<div class="cover bg-center bg-no-repeat bg-cover bg-{{ page.extra.cover.position | default(value="center") }}"
      style="background-image: url('{{ page.extra.cover.src }}');">
   {% if page.extra.cover.attribution.link and page.extra.cover.attribution.name %}
     <a class="credit" href="{{ page.extra.cover.attribution.link }}" target="_blank" rel="noopener noreferrer"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">{{ page.extra.cover.attribution.name }}</span></a>

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="tags">
+    <header>
+      <h1 class="title">
+        {{ taxonomy.name | capitalize }}
+      </h1>
+    </header>
+
+    <ul>
+      {% for term in terms %}
+        <li><a href="{{ term.permalink }}">{{ term.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock main %}
