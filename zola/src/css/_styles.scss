@@ -220,3 +220,23 @@ article.post {
     }
   }
 }
+
+.meta {
+  @apply text-grey;
+  @apply text-xs;
+
+  a {
+    @apply text-grey;
+
+    text-decoration: underline;
+  }
+}
+
+.tag {
+  @apply inline-block;
+  @apply bg-grey-lightest;
+  @apply rounded;
+  @apply px-2;
+  @apply py-0;
+  @apply text-grey;
+}

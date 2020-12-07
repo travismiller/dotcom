@@ -4,7 +4,7 @@
   <h2>{{ group }}</h2>
 
   {% if body %}
-    {{ body | markdown }}
+    {{ body | markdown | safe }}
   {% endif %}
 
   {% if data[group] %}
@@ -14,7 +14,7 @@
         <figcaption>
           <div class="info">
             <h3>{{ work.title | safe }}</h3>
-            <p>{{ work.description | markdown }}</p>
+            {{ work.description | markdown | safe }}
           </div>
           <p class="links">
             <a href="{{ work.url }}" rel="nofollow noopener noreferrer" target="_blank">{{ work.domain }}</a>

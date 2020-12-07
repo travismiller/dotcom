@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="tag">
+    <header>
+      <h1 class="title">
+        Tag: {{ term.name }}
+      </h1>
+    </header>
+
+    {% for page in term.pages %}
+      {{ macros::page_card(page=page) }}
+    {% endfor %}
+  </div>
+{% endblock main %}
