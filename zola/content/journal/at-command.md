@@ -30,6 +30,15 @@ data two days in a row more than once now. So, this time, when I triggered a
 snapshot of the data, I've set an *at-job* to run the same job again tomorrow
 so that I get that snapshot to verify later.
 
+## Notes on MacOS
+
+⚠️ A note about MacOS: This functionality is disabled by default and needs to
+be enabled before it will work. See the [Making “at” work on MacOS] discussion on 
+StackExchange.
+
+1. Give `/usr/libexec/atrun` Full Disk Access in Security & Privacy preferences.
+2. Enable the `atrun` utility with `launchd`.
+
 ## Creating an “at-job”
 
 There are a couple of ways to create the job.
@@ -98,8 +107,13 @@ Now we wait.
 - [`at` command] on Wikipedia
 - [standard input] on Wikipedia
 - [The Single UNIX Specification]
+- [Making at work on MacOS]
+- [Mac OS X at command not working]
 
 
 [`at` command]: https://en.wikipedia.org/wiki/At_(command)
 [standard input]: https://en.wikipedia.org/wiki/Standard_streams#Standard_input_(stdin)
 [The Single UNIX Specification]: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/at.html
+
+[Making “at” work on MacOS]: https://unix.stackexchange.com/questions/478823/making-at-work-on-macos
+[Mac OS X at command not working]: https://superuser.com/questions/43678/mac-os-x-at-command-not-working
